@@ -4,6 +4,7 @@ package es.urjc.code.daw.library;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -54,17 +55,18 @@ import es.urjc.code.daw.library.notification.NotificationService;
 	 void editBookWrongly() {
 		
 		//Given 
-		Book bookA = new Book("Libro", "");
+		Book bookA = new Book("Libro", "fefef");
 		when(bookR.save(bookA)).thenReturn(bookA);
-				
+	//	bookA=bookS.save(bookA);		
 		//When
-		//bookA.setDescription("");
+		
+		bookA.setDescription("");
 		bookS.edit(bookA);
 		
 		//Then
 		
 		verify(bookR, never()).save(bookA);
-		verify(notS, never()).notify();
+		verify(notS, times(0)).notify("Book Event: book with title="+bookA.getTitle()+" was modified");
 		//verify(bookC).checkIfEmpty(bookA);
 		//assertTrue(bookC.checkIfEmpty(bookA));
 	}
