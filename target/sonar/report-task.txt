@@ -1,0 +1,6 @@
+projectKey=es.codeurjcc.ais:a.renteroo.2016-a.cuacos
+serverUrl=http://localhost:9000
+serverVersion=8.9.1.44547
+dashboardUrl=http://localhost:9000/dashboard?id=es.codeurjcc.ais%3Aa.renteroo.2016-a.cuacos
+ceTaskId=AXp31qYs7BmrDEUSqG3I
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXp31qYs7BmrDEUSqG3I
